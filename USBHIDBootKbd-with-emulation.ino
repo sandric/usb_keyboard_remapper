@@ -121,8 +121,8 @@ void parseKeystroke(uint8_t key, uint8_t mod) {
       case 5:  buttonChanged = 47; modChanged = 0; break; //leftShift + B - [
       case 14: buttonChanged = 48; modChanged = 0; break; //leftShift + K - ]
       
-      case 16: buttonChanged = 56; modChanged = 0; break; //leftShift + V - /
-      case 25: buttonChanged = 49; modChanged = 0; break; //leftShift + M - 
+      case 16: buttonChanged = 46; modChanged = 2; break; //leftShift + V - plus
+      case 25: buttonChanged = 45; modChanged = 0; break; //leftShift + M - minus
       
       case 19: buttonChanged = 45; modChanged = 2; break; //leftShift + P - _
       case 23: buttonChanged = 46; modChanged = 0; break; //leftShift + T - =
@@ -131,7 +131,7 @@ void parseKeystroke(uint8_t key, uint8_t mod) {
       case 29: buttonChanged = 30; modChanged = 0; break; //1
       case 27: buttonChanged = 31; modChanged = 0; break; //2
       case 6:  buttonChanged = 32; modChanged = 0; break; //3
-
+      
       case 4:  buttonChanged = 33; modChanged = 0; break; //4
       case 21: buttonChanged = 34; modChanged = 0; break; //5
       case 22: buttonChanged = 35; modChanged = 0; break; //6
@@ -145,26 +145,18 @@ void parseKeystroke(uint8_t key, uint8_t mod) {
   }
   if(mod == 4) {
     switch(key) {
-      case 43: buttonChanged = 54; modChanged = 0; break; //Shuffle - ,
-      case 25: buttonChanged = 6; modChanged = 1; break; //Alt + T - copy ,
-      case 16: buttonChanged = 25; modChanged = 1; break; //Alt + N - paste s,
-      case 4:  buttonChanged = 4; modChanged = 1; break; //Alt + A - select all,
-      case 9:  buttonChanged = 9; modChanged = 1; break; //Alt + F - search,
+      case 43: buttonChanged = 6; modChanged = 4; break; //Shuffle - ,
     }
   }
   if(mod == 8) {
     switch(key) {
-      case 7: buttonChanged = 55; modChanged = 0; break; //Shuffle - .
+      case 7: buttonChanged = 25; modChanged = 4; break; //Shuffle - .
     }
   }
   if(mod == 0) {
     switch(key){
       case 51: buttonChanged = 51; modChanged = 2; break; //; - :
       case 47: buttonChanged = 51; modChanged = 0; break; //{ - ;
-      
-      case 54: buttonChanged = 46; modChanged = 2; break; //plus
-      case 55: buttonChanged = 45; modChanged = 0; break; //minus
-      
       case 30: buttonChanged = 30; modChanged = 2; break; //!
       case 31: buttonChanged = 35; modChanged = 2; break; //^
       case 32: buttonChanged = 33; modChanged = 2; break; //$
@@ -257,5 +249,4 @@ void delayMs(unsigned int ms) {
     delayMicroseconds(1000);
   }
 }
-
 
